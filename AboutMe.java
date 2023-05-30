@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
-import javax.swing.JTextArea;
+import javax.swing.JTextArea; 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
@@ -31,6 +31,7 @@ public class AboutMe extends HomePage {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
+		// Create a new JFrame
 		frame = new JFrame();
 		frame.getContentPane().setForeground(new Color(248, 248, 255));
 		frame.setResizable(false);
@@ -39,28 +40,33 @@ public class AboutMe extends HomePage {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		// Create a JPanel for the border
 		JPanel border1 = new JPanel();
 		border1.setBackground(Color.BLACK);
 		border1.setBounds(74, 43, 868, 276);
 		frame.getContentPane().add(border1);
 		border1.setLayout(null);
 		
+		// Create a JPanel for the vertical line
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.BLACK);
 		panel.setBounds(367, 11, 4, 253);
 		border1.add(panel);
 		
+		// Create a JPanel for the information section
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(10, 11, 884, 253);
 		border1.add(panel_2);
 		panel_2.setBackground(Color.WHITE);
 		panel_2.setLayout(null);
 		
+		// Create a JLabel for the profile picture
 		JLabel myPic = new JLabel("myPic");
 		myPic.setIcon(new ImageIcon("C:\\Users\\admin\\OneDrive - National University\\3rd Term (1st yr)\\OOP\\iconsforOOP\\myPic.png"));
 		myPic.setBounds(417, 5, 200, 174);
 		panel_2.add(myPic);
 		
+		 // Create a JLabel for the name
 		JLabel myName = new JLabel("JUSTIN R. CRISTAL");
 		myName.setBackground(Color.BLACK);
 		myName.setForeground(Color.BLACK);
@@ -68,56 +74,66 @@ public class AboutMe extends HomePage {
 		myName.setBounds(386, 181, 263, 49);
 		panel_2.add(myName);
 		
+		// Create a JLabel for the phone icon
 		JLabel callNumber = new JLabel("callNumber");
 		callNumber.setIcon(new ImageIcon("C:\\Users\\admin\\OneDrive - National University\\3rd Term (1st yr)\\OOP\\iconsforOOP\\phoneIcon.png"));
 		callNumber.setForeground(Color.WHITE);
 		callNumber.setBounds(10, 51, 27, 20);
 		panel_2.add(callNumber);
 		
+		// Create a JLabel for the home icon
 		JLabel myHomeadd = new JLabel("homeAdd");
 		myHomeadd.setIcon(new ImageIcon("C:\\Users\\admin\\OneDrive - National University\\3rd Term (1st yr)\\OOP\\iconsforOOP\\homeIcon.png"));
 		myHomeadd.setForeground(Color.WHITE);
 		myHomeadd.setBounds(10, 113, 27, 20);
 		panel_2.add(myHomeadd);
 		
+		// Create a JLabel for the email icon
 		JLabel emailAdd = new JLabel("emailAdd");
 		emailAdd.setIcon(new ImageIcon("C:\\Users\\admin\\OneDrive - National University\\3rd Term (1st yr)\\OOP\\iconsforOOP\\emailicon.png"));
 		emailAdd.setForeground(Color.WHITE);
 		emailAdd.setBounds(10, 82, 27, 20);
 		panel_2.add(emailAdd);
 		
+		// Create a label with the text "Information Technology"
 		JLabel myCourse = new JLabel("Information Technology");
 		myCourse.setFont(new Font("Tahoma", Font.BOLD, 16));
 		myCourse.setBounds(417, 216, 200, 26);
 		panel_2.add(myCourse);
 		
+		// Create a label with the text "Contacts and Address"
 		JLabel contactsAndAdresses = new JLabel("Contacts and Address");
 		contactsAndAdresses.setForeground(new Color(0, 0, 205));
 		contactsAndAdresses.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 24));
 		contactsAndAdresses.setBounds(10, 11, 282, 29);
 		panel_2.add(contactsAndAdresses);
 		
+		// Create a label with the text "Accounts"
 		JLabel myAccounts = new JLabel("Accounts");
 		myAccounts.setForeground(new Color(0, 0, 205));
 		myAccounts.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 24));
 		myAccounts.setBounds(10, 144, 123, 29);
 		panel_2.add(myAccounts);
 		
+		// Create a label with the text "09959668438"
 		JLabel myPhoneNum = new JLabel("09959668438");
 		myPhoneNum.setFont(new Font("Tahoma", Font.BOLD, 12));
 		myPhoneNum.setBounds(47, 53, 156, 14);
 		panel_2.add(myPhoneNum);
 		
+		// Create a label with the text "cristaljr@students.national-u.edu.ph"
 		JLabel myEmail = new JLabel("cristaljr@students.national-u.edu.ph");
 		myEmail.setFont(new Font("Tahoma", Font.BOLD, 12));
 		myEmail.setBounds(47, 84, 289, 14);
 		panel_2.add(myEmail);
 		
+		// Create a label with the text "4 C Benitez St. District IV, Cubao, Quezon City."
 		JLabel myAddress = new JLabel("4 C Benitez St. District IV, Cubao, Quezon City.");
 		myAddress.setFont(new Font("Tahoma", Font.BOLD, 12));
 		myAddress.setBounds(47, 115, 289, 14);
 		panel_2.add(myAddress);
 		
+		// Create a label for Facebook logo and attach a mouse click listener to open a URL when clicked
 		JLabel fbLogo = new JLabel("fbLogo");
 		fbLogo.addMouseListener(new MouseAdapter() {
 			
@@ -126,7 +142,7 @@ public class AboutMe extends HomePage {
 					Desktop.getDesktop().browse(new URL("https://www.facebook.com/Crystaaaaal1/").toURI());
 				}
 				catch (Exception e1) {
-					
+					// Handle any exceptions
 				}
 			}
 		});
@@ -134,6 +150,7 @@ public class AboutMe extends HomePage {
 		fbLogo.setBounds(34, 181, 97, 61);
 		panel_2.add(fbLogo);
 		
+		// Create a label for GitHub logo and attach a mouse click listener to open a URL when clicked
 		JLabel gitHubLogo = new JLabel("githubLogo");
 		gitHubLogo.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -141,7 +158,7 @@ public class AboutMe extends HomePage {
 					Desktop.getDesktop().browse(new URL("https://github.com/JCristal30").toURI());
 				}
 				catch (Exception e1) {
-					
+					// Handle any exceptions
 				}
 			}
 		});
@@ -149,11 +166,13 @@ public class AboutMe extends HomePage {
 		gitHubLogo.setBounds(195, 181, 97, 61);
 		panel_2.add(gitHubLogo);
 		
+		// Create a panel for border3 with a specific background color and position
 		JPanel border3 = new JPanel();
 		border3.setBackground(new Color(0, 0, 0));
 		border3.setBounds(874, -11, 10, 541);
 		frame.getContentPane().add(border3);
 		
+		// Create a JTextArea for description and set its properties
 		JTextArea Description = new JTextArea();
 		Description.setForeground(Color.BLACK);
 		Description.setBackground(Color.WHITE);
@@ -165,6 +184,7 @@ public class AboutMe extends HomePage {
 		Description.setBounds(301, 330, 449, 228);
 		frame.getContentPane().add(Description);
 		
+		// Create a panel for border2 with a specific background color and position
 		JPanel border2 = new JPanel();
 		border2.setBackground(new Color(0, 0, 0));
 		border2.setBounds(0, 0, 291, 740);
